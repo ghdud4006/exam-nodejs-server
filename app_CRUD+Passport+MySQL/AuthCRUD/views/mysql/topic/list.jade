@@ -1,0 +1,26 @@
+extends ../layout
+block content
+	h1
+		a(href='/topic') NodeJS with MySQL
+	ul
+		each topic in topics
+			li
+				a(href='/topic/list/'+topic.id)= topic.title
+		br
+	article
+		if topic
+			h2= topic.title
+			= topic.description
+			br
+			h6= 'by ' +topic.author
+		else
+			h2 Welcome
+			| This is data list.
+	ul
+		li
+			a(href='/topic/add') add
+		if topic
+			li
+				a(href='/topic/list/'+topic.id+'/delete') delete
+			li
+				a(href='/topic/list/'+topic.id+'/edit') edit

@@ -1,0 +1,15 @@
+extends ../layout
+block content
+	h1= 'Edit '+topic.title
+	form(action='/topic/list/'+topic.id+'/edit' method='post')
+		p
+			input(type='text' name='title' placeholder='title' value=topic.title)
+		p
+			textarea(name='description' placeholder='description')=topic.description
+		p
+			input(type='text' name='author' placeholder='author' value=topic.author)
+		p
+			input(type='submit' value='edit')
+	form(action='/topic/list' method='get')
+		p
+			input(type='submit' value='cancel')

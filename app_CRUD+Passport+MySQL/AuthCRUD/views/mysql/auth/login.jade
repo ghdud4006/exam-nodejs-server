@@ -1,0 +1,15 @@
+extends ../layout
+block content
+  h1 Login
+  form(action='/auth/login', method='post')
+    p
+      label Username:
+      input(type='text', name='username')
+    p
+      label Password:
+      input(type='password', name='password')
+    p
+      input(type='submit', value='Log In')
+  a(href='/auth/facebook') facebook
+  br
+  a(href='/auth/register') register

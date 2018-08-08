@@ -1,0 +1,8 @@
+extends ../layout
+block content
+  html
+    h1= 'Delete? '+topic.title
+    form(action='/topic/list/'+topic.id+'/delete' method='post')
+      input(type='submit' value='yes')
+    form(action='/topic/list/'+topic.id method='get')
+      input(type='submit' value='no')
